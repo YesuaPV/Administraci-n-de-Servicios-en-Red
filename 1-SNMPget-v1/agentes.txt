@@ -1,0 +1,5 @@
+192.168.0.191,comunidadASRWin,161,2
+192.168.0.195,comunidadASR,161,2
+10.100.76.31,comunidadASRWin,161,2
+10.100.76.175,comunidadASR,161,2
+10.100.75.106,ComunidadASRWin,161,2
