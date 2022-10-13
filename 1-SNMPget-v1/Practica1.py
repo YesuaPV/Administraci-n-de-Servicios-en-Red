@@ -100,36 +100,39 @@ def obtenerDatosAgente(agente):
   titulo = "reportes/"+agente.get('ip')+"-"+agente.get('comunidad')+"_"+str(datetime.now()).replace(' ','_').replace(':','_')+".pdf"
   canva = canvas.Canvas(titulo,pagesize=letter)
   canva.setLineWidth(.3)
-  canva.setFont('Helvetica', 14)
-  canva.drawString(225, 770, "Reporte agente " + str(datetime.now()).split(" ")[0])
   canva.setFont('Helvetica', 8)
-  canva.drawString(25, 770,str(datetime.now()).split(" ")[1].split(".")[0])
+  canva.drawString(25, 775, "Adminsitración de Servicios en Red - Práctica 1")
+  canva.drawString(25, 760, "Pérez Vidales Yesua David - 4CM13")
+  canva.setFont('Helvetica', 14)
+  canva.drawString(225, 740, "Reporte agente " + str(datetime.now()).split(" ")[0])
+  canva.setFont('Helvetica', 8)
+  canva.drawString(25, 740,str(datetime.now()).split(" ")[1].split(".")[0])
   canva.setFont('Helvetica', 12)
-  canva.drawString(50,730,"IP : " + agente.get('ip'))
-  canva.drawString(300,730,"Puerto: " + agente.get('puerto'))
-  canva.drawString(50,710,"Comunidad: " + agente.get('comunidad'))
-  canva.drawString(300, 710, "MIB: v" + agente.get('version'))
-  canva.drawString(50,690,"Host: " + str(consultaSNMP(agente,OIDs.get('Nombre'))).split("= ")[1])
+  canva.drawString(50,690,"IP : " + agente.get('ip'))
+  canva.drawString(300,690,"Puerto: " + agente.get('puerto'))
+  canva.drawString(50,670,"Comunidad: " + agente.get('comunidad'))
+  canva.drawString(300, 6700, "MIB: v" + agente.get('version'))
+  canva.drawString(50,650,"Host: " + str(consultaSNMP(agente,OIDs.get('Nombre'))).split("= ")[1])
   so1 = consultaSNMP(agente,OIDs.get('SO'))
   if so1.find("Windows") != -1:
-    canva.drawImage("logo/win.jpg",400,610, width=200, height=200)
+    canva.drawImage("logo/win.jpg",400,570, width=200, height=200)
     so = consultaSNMP(agente, OIDs.get('SO')).split("Software: ")[1].split("(")[0]
   elif so1.find("Linux") != -1:
-    canva.drawImage("logo/linux.jpg",400,640, width=200, height=130)
+    canva.drawImage("logo/linux.jpg",400,600, width=200, height=130)
     so = consultaSNMP(agente, OIDs.get('SO')).split(" ")[5]
   else:
-    canva.drawImage("logo/otro.jpg",400,610, width=200, height=200)
+    canva.drawImage("logo/otro.jpg",400,570, width=200, height=200)
     so = consultaSNMP(agente, OIDs.get('SO')).split("= ")[1]
-  canva.drawString(445,640, so )
-  canva.drawString(50,670,"Ubicación: " + consultaSNMP(agente,OIDs.get('Ubicacion')).split("= ")[1])
-  canva.drawString(50,650,"Tiempo de actividad: " + str(int(consultaSNMP(agente, OIDs.get('tiempoActividad')).split("= ")[1])/100) + "s")
+  canva.drawString(445,600, so )
+  canva.drawString(50,630,"Ubicación: " + consultaSNMP(agente,OIDs.get('Ubicacion')).split("= ")[1])
+  canva.drawString(50,610,"Tiempo de actividad: " + str(int(consultaSNMP(agente, OIDs.get('tiempoActividad')).split("= ")[1])/100) + "s")
   interfaces = int(consultaSNMP(agente,OIDs.get('numeroInterfaces')).split("= ")[1])
-  canva.drawString(250,620,"  Numero de interfaces: " + str(interfaces))
-  canva.line(25, 610, 600, 610)
+  canva.drawString(250,580,"  Numero de interfaces: " + str(interfaces))
+  canva.line(25, 570, 600, 570)
   canva.setFont('Helvetica', 11)
-  canva.drawString(30,590,"Nombre de la Interface")
-  canva.drawString(500, 590, "Status")
-  linea = 590
+  canva.drawString(30,550,"Nombre de la Interface")
+  canva.drawString(500, 550, "Status")
+  linea = 550
   if interfaces > 5:
     interfaces = 5
   for i in range (interfaces):
@@ -197,9 +200,9 @@ def mostrarAgentes():
 #MENU
 flag = 0
 while flag == 0:
-  print("\n\t************************")
-  print("\t* Práctica 1: SNMP GET *")
-  print("\t************************")
+  print(bcolor.OK+"\n\tSistema de Adminsitración de Red")
+  print("\tPráctica 1: Administración de Información")
+  print("\tPérez Vidales Yesua David \t4CM13\t2019630501"+bcolor.RESET)
   print("\n OPCIONES: ")
   print("1) Agregar agente\n2) Eliminar agente\n3) Hacer reporte de un agente\notro) salir")
   op = input()
