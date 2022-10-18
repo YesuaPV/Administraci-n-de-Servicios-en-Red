@@ -55,6 +55,11 @@ def eliminarAgente(): #Eliminar un agente SNMP
           salida.write(line)
   os.replace('agentesTemp.txt', 'agentes.txt')
   lectura.close()
+
+  dir = 'reportes/'
+  for f in os.listdir(dir):
+    if((ip in f) and (comunidad in f)):
+      os.remove(os.path.join(dir, f))
   return borrados
 
 
