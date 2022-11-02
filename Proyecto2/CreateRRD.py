@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import rrdtool
-ret = rrdtool.create("segmentosRed.rrd",
+ret = rrdtool.create("elementosRed.rrd",
                      "--start",'N',
                      "--step",'60',
                      "DS:segmentosEntrada:COUNTER:120:U:U",

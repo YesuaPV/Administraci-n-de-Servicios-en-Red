@@ -5,7 +5,7 @@ import time
 last_update = rrdtool.lastupdate("segmentosRed.rrd")
 # Grafica desde la última lectura menos cinco minutos
 print(last_update)
-tiempo_inicial = int(last_update['date'].timestamp())- 300
+tiempo_inicial = int(last_update['date'].timestamp())- 60
 print(tiempo_inicial)
 rrdtool.dump("segmentosRed.rrd","segmentosRed.xml")
 result = rrdtool.fetch("segmentosRed.rrd", "-s,"+str(tiempo_inicial),"LAST")

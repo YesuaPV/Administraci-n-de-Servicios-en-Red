@@ -50,6 +50,7 @@ def eliminarAgente(): #Eliminar un agente SNMP
       for line in lectura:
         datos = line.split(",")
         if datos[0] == ip and datos[1] == comunidad:
+
           borrados = borrados + 1
         else:
           salida.write(line)
@@ -209,7 +210,7 @@ while flag == 0:
   if int(op) == 1:
     pyautogui.hotkey('ctrl','l')
     agregaAgente()
-    pyautogui.hotkey('ctrl','l')
+    pyautogui.hotkey('','l')
     print(bcolor.OK+"\t-Agente agregado-"+bcolor.RESET)
   elif int(op) == 2:
     pyautogui.hotkey('ctrl','l')
