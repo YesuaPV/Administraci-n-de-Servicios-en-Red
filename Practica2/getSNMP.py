@@ -1,10 +1,10 @@
 from pysnmp.hlapi import *
 
-def consultaSNMP(comunidad,host,oid):
+def consultaSNMP(agente, oid):
     errorIndication, errorStatus, errorIndex, varBinds = next(
         getCmd(SnmpEngine(),
-               CommunityData(comunidad),
-               UdpTransportTarget((host, 161)),
+               CommunityData(agente.get('comunidad')),
+               UdpTransportTarget((agente.get('ip'), 161)),
                ContextData(),
                ObjectType(ObjectIdentity(oid))))
 

@@ -2,7 +2,8 @@ import sys
 import rrdtool
 import time
 
-def fetch(archivo):
+def fetch(agente):
+    archivo = "RRDTools/"+agente.get('ip')+'_'+agente.get('comunidad')+".rrd"
     last_update = rrdtool.lastupdate(archivo)
     # Grafica desde la última lectura menos cinco minutos
     print(last_update)

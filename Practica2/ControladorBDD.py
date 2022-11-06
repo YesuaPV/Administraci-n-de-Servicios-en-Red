@@ -65,3 +65,8 @@ def file_open(name, mode):
   except OSError as err:
     print("Error: {0}".format(err))
   return
+
+def file_exist(name):
+  if os.path.isfile(name):
+    return True
+  return False
