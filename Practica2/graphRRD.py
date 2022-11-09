@@ -12,6 +12,7 @@ def grafica(agente, iniTime, finTime):
 
     if not file_exist(archivo):
         return False
+
     ret1 = rrdtool.graphv( "images/Unicast.png",
                          "--start",str(tiempo_inicial),
                          "--end",str(tiempo_actual),

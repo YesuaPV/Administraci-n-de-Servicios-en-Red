@@ -93,7 +93,7 @@ def obtenerDatosAgente(agente):
     'Ubicacion': '1.3.6.1.2.1.1.6.0',
     'numeroInterfaces': '1.3.6.1.2.1.2.1.0',
     'nombreInterface': '1.3.6.1.2.1.2.2.1.2.',
-    'statusInterface': '1.3.6.1.2.1.2.2.1.8.',
+    'statusInterface': '1.3.6.1.2.1.2.2.1.11.',
     'tiempoActividad': '1.3.6.1.2.1.1.3.0'
   }
 
@@ -134,8 +134,6 @@ def obtenerDatosAgente(agente):
   canva.drawString(30,550,"Nombre de la Interface")
   canva.drawString(500, 550, "Status")
   linea = 550
-  if interfaces > 5:
-    interfaces = 5
   for i in range (interfaces):
     linea = linea - 15
     if linea < 30:
@@ -155,12 +153,7 @@ def obtenerDatosAgente(agente):
       canva.drawString(35, linea, nombre[0:len(nombre) - 1])
 
     status = consultaSNMP(agente,OIDs.get('statusInterface')+str(i+1)).split("= ")[1]
-    if int(status) == 1:
-      canva.drawString(500, linea, "up")
-    elif int(status) == 2:
-      canva.drawString(500, linea, "down")
-    else:
-      canva.drawString(500, linea, "testing")
+    canva.drawString(500, linea, status)
   canva.save()
 
   return ""

@@ -44,9 +44,13 @@ def mostrarAgentes(opcion):
       print(bcolor.FAIL+"\n  *Indice incorrecto*"+bcolor.RESET)
 
   if int(opcion) == 1:
-    update(agente)
+    print("Numero de interfaz de red: ")
+    intrfce = input()
+    update(agente, intrfce)
   elif int(opcion) == 2:
-    generarReporte(listaAgentes[int(indice)-1], indice)
+    print("Numero de interfaz de red: ")
+    intrfce = input()
+    generarReporte(listaAgentes[int(indice)-1], indice, intrfce)
   else:
     fetch(agente)
 
@@ -54,7 +58,7 @@ def mostrarAgentes(opcion):
 
 
 #GENERA REPORTE
-def generarReporte(agente, id):
+def generarReporte(agente, id, intrfce):
   #1667769660
   #1667769060
   print("\nTiempo inicial de la grafica (epoch)")
@@ -97,9 +101,9 @@ def generarReporte(agente, id):
   canva.drawString(50, 465, "#Acct-Delay-Time")
   canva.drawString(50, 450, "41: 14")
   canva.drawString(50, 435, "#Acct-Input-Octets")
-  canva.drawString(50, 420, "42: " + consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.10.2'))
+  canva.drawString(50, 420, "42: " + consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.10.' + intrfce))
   canva.drawString(50, 405, "#Acct-Output-Octets")
-  canva.drawString(50, 390, "43: " + consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.16.2'))
+  canva.drawString(50, 390, "43: " + consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.16.' + intrfce))
   canva.drawString(50, 375, "#Acct-Session-Id")
   canva.drawString(50, 360, "44: " + id)
   canva.drawString(50, 345, "#Acct-Authentic")
@@ -107,10 +111,10 @@ def generarReporte(agente, id):
   canva.drawString(50, 315, "#Acct-Session-Time")
   canva.drawString(50, 300, "46: " + consultaSNMP(agente, '1.3.6.1.2.1.1.3.0'))
   canva.drawString(50, 285, "#Acct-Input-Packets")
-  inPackets = int(consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.11.2')) + int(consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.12.2'))
+  inPackets = int(consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.11.' + intrfce)) + int(consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.12.' + intrfce))
   canva.drawString(50, 270, "47: " + str(inPackets))
   canva.drawString(50, 255, "#Acct-Output-Packets")
-  outPackets = int(consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.17.2')) + int(consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.18.2'))
+  outPackets = int(consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.17.' + intrfce)) + int(consultaSNMP(agente, '1.3.6.1.2.1.2.2.1.18.' + intrfce))
   canva.drawString(50, 240, "48: " + str(outPackets))
   canva.drawString(50, 225, "#Acct-Terminate-Cause")
   canva.drawString(50, 210, "49: 11")
