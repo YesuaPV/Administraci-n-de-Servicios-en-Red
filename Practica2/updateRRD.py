@@ -16,7 +16,7 @@ def update(agente, intrfce):
         pkt_in = int(consultaSNMP(agente, '1.3.6.1.2.1.4.3.0'))
         ICMP_out = int(consultaSNMP(agente, '1.3.6.1.2.1.5.21.0'))
         sgmnt_in = int(consultaSNMP(agente, '1.3.6.1.2.1.6.10.0'))
-        dtg_out = int(consultaSNMP(agente, '1.3.6.1.2.1.7.1.0'))
+        dtg_out = int(consultaSNMP(agente, '1.3.6.1.2.1.7.1.0.2'))
         valor = "N:" + str(uncst_in_pkt) + ':' + str(pkt_in) + ':' + str(ICMP_out) + ':' + str(sgmnt_in) + ':' + str(dtg_out)
         print(valor)
         rrdtool.update(archivo, valor)
