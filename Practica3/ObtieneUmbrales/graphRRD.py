@@ -5,7 +5,7 @@ import time
 rrdpath = '/home/linuxlite/PycharmProjects/Administraci-n-de-Servicios-en-Red/Practica3/ObtieneUmbrales/'
 ultima_lectura = int(rrdtool.last(rrdpath + "promedio.rrd"))
 tiempo_final = ultima_lectura
-tiempo_inicial = tiempo_final - 10000
+tiempo_inicial = tiempo_final - 16000
 
 ret1 = rrdtool.graphv( "CPU.png",
                      "--start",str(tiempo_inicial),
