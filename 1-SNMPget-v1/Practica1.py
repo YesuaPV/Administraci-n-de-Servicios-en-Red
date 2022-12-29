@@ -50,16 +50,12 @@ def eliminarAgente(): #Eliminar un agente SNMP
       for line in lectura:
         datos = line.split(",")
         if datos[0] == ip and datos[1] == comunidad:
+
           borrados = borrados + 1
         else:
           salida.write(line)
   os.replace('agentesTemp.txt', 'agentes.txt')
   lectura.close()
-
-  dir = 'reportes/'
-  for f in os.listdir(dir):
-    if((ip in f) and (comunidad in f)):
-      os.remove(os.path.join(dir, f))
   return borrados
 
 
@@ -97,7 +93,7 @@ def obtenerDatosAgente(agente):
     'Ubicacion': '1.3.6.1.2.1.1.6.0',
     'numeroInterfaces': '1.3.6.1.2.1.2.1.0',
     'nombreInterface': '1.3.6.1.2.1.2.2.1.2.',
-    'statusInterface': '1.3.6.1.2.1.2.2.1.8.',
+    'statusInterface': '1.3.6.1.2.1.2.2.1.11.',
     'tiempoActividad': '1.3.6.1.2.1.1.3.0'
   }
 
@@ -138,8 +134,6 @@ def obtenerDatosAgente(agente):
   canva.drawString(30,550,"Nombre de la Interface")
   canva.drawString(500, 550, "Status")
   linea = 550
-  if interfaces > 15:
-    interfaces = 15
   for i in range (interfaces):
     linea = linea - 15
     if linea < 30:
@@ -160,12 +154,6 @@ def obtenerDatosAgente(agente):
 
     status = consultaSNMP(agente,OIDs.get('statusInterface')+str(i+1)).split("= ")[1]
     canva.drawString(500, linea, status)
-    #if int(status) == 1:
-
-    #elif int(status) == 2:
-    #  canva.drawString(500, linea, "down")
-    #else:
-    #  canva.drawString(500, linea, "testing")
   canva.save()
 
   return ""
@@ -215,7 +203,7 @@ while flag == 0:
   if int(op) == 1:
     pyautogui.hotkey('ctrl','l')
     agregaAgente()
-    pyautogui.hotkey('ctrl','l')
+    pyautogui.hotkey('','l')
     print(bcolor.OK+"\t-Agente agregado-"+bcolor.RESET)
   elif int(op) == 2:
     pyautogui.hotkey('ctrl','l')

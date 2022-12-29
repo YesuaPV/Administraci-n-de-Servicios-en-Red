@@ -4,12 +4,12 @@ from email.mime.multipart import MIMEMultipart
 
 COMMASPACE = ', '
 # Define params
-rrdpath = '/home/tani/PycharmProjects/Introduccion_SNMP/6-AdministraciónDeRendimiento/RRD/'
-imgpath = '/home/tani/PycharmProjects/Introduccion_SNMP/6-AdministraciónDeRendimiento/IMG/'
+rrdpath = '/home/linuxlite/PycharmProjects/Administraci-n-de-Servicios-en-Red/6-AdministraciónDeRendimiento/RRD/'
+imgpath = '/home/linuxlite/PycharmProjects/Administraci-n-de-Servicios-en-Red/6-AdministraciónDeRendimiento/IMG/'
 fname = 'trend.rrd'
 
 mailsender = "dummycuenta3@gmail.com"
-mailreceip = "dummycuenta3@gmail.com"
+mailreceip = "yesuaperez1@gmail.com"
 mailserver = 'smtp.gmail.com: 587'
 password = 'dvduuffmlhspbmjj'
 

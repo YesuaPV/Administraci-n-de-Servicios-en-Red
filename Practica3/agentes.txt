@@ -1,0 +1,4 @@
+10.0.2.15,comunidadYesua,161,2
+172.100.92.253,comunidadYesua,161,2
+172.100.86.100,comunidadErick,161,2
+172.100.81.173,comunidadYesua,161,2

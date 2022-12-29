@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rrd SYSTEM "https://oss.oetiker.ch/rrdtool/rrdtool.dtd">
+<!-- Round Robin Database Dump -->
+<rrd>
+	<version>0003</version>
+	<step>60</step> <!-- Seconds -->
+	<lastupdate>1666795831</lastupdate> <!-- 2022-10-26 09:50:31 CDT -->
+
+	<ds>
+		<name> segmentosEntrada </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>120</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>8979</last_ds>
+		<value>0.0000000000e+00</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<ds>
+		<name> segmentosSalida </name>
+		<type> COUNTER </type>
+		<minimal_heartbeat>120</minimal_heartbeat>
+		<min>NaN</min>
+		<max>NaN</max>
+
+		<!-- PDP Status -->
+		<last_ds>8871</last_ds>
+		<value>0.0000000000e+00</value>
+		<unknown_sec> 0 </unknown_sec>
+	</ds>
+
+	<!-- Round Robin Archives -->
+	<rra>
+		<cf>AVERAGE</cf>
+		<pdp_per_row>6</pdp_per_row> <!-- 360 seconds -->
+
+		<params>
+		<xff>5.0000000000e-01</xff>
+		</params>
+		<cdp_prep>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>2.8666666667e+00</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>0.0000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>2.9000000000e+00</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+		</cdp_prep>
+		<database>
+			<!-- 2022-10-26 09:24:00 CDT / 1666794240 --> <row><v>NaN</v><v>NaN</v></row>
+			<!-- 2022-10-26 09:30:00 CDT / 1666794600 --> <row><v>NaN</v><v>NaN</v></row>
+			<!-- 2022-10-26 09:36:00 CDT / 1666794960 --> <row><v>1.2677777778e+00</v><v>1.1122222222e+00</v></row>
+			<!-- 2022-10-26 09:42:00 CDT / 1666795320 --> <row><v>1.2527777778e+00</v><v>1.2722222222e+00</v></row>
+			<!-- 2022-10-26 09:48:00 CDT / 1666795680 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+		</database>
+	</rra>
+	<rra>
+		<cf>AVERAGE</cf>
+		<pdp_per_row>1</pdp_per_row> <!-- 60 seconds -->
+
+		<params>
+		<xff>5.0000000000e-01</xff>
+		</params>
+		<cdp_prep>
+			<ds>
+			<primary_value>1.7666666667e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+			<ds>
+			<primary_value>1.7000000000e+00</primary_value>
+			<secondary_value>0.0000000000e+00</secondary_value>
+			<value>NaN</value>
+			<unknown_datapoints>0</unknown_datapoints>
+			</ds>
+		</cdp_prep>
+		<database>
+			<!-- 2022-10-26 09:31:00 CDT / 1666794660 --> <row><v>NaN</v><v>NaN</v></row>
+			<!-- 2022-10-26 09:32:00 CDT / 1666794720 --> <row><v>3.3888888889e+00</v><v>2.8611111111e+00</v></row>
+			<!-- 2022-10-26 09:33:00 CDT / 1666794780 --> <row><v>1.4500000000e+00</v><v>1.3000000000e+00</v></row>
+			<!-- 2022-10-26 09:34:00 CDT / 1666794840 --> <row><v>1.3500000000e+00</v><v>1.2500000000e+00</v></row>
+			<!-- 2022-10-26 09:35:00 CDT / 1666794900 --> <row><v>1.5000000000e-01</v><v>1.5000000000e-01</v></row>
+			<!-- 2022-10-26 09:36:00 CDT / 1666794960 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:37:00 CDT / 1666795020 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:38:00 CDT / 1666795080 --> <row><v>4.4223854489e+00</v><v>4.6223854489e+00</v></row>
+			<!-- 2022-10-26 09:39:00 CDT / 1666795140 --> <row><v>1.0276145511e+00</v><v>9.9428121781e-01</v></row>
+			<!-- 2022-10-26 09:40:00 CDT / 1666795200 --> <row><v>5.3333333333e-01</v><v>5.1666666667e-01</v></row>
+			<!-- 2022-10-26 09:41:00 CDT / 1666795260 --> <row><v>1.5333333333e+00</v><v>1.5000000000e+00</v></row>
+			<!-- 2022-10-26 09:42:00 CDT / 1666795320 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:43:00 CDT / 1666795380 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:44:00 CDT / 1666795440 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:45:00 CDT / 1666795500 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:46:00 CDT / 1666795560 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:47:00 CDT / 1666795620 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:48:00 CDT / 1666795680 --> <row><v>0.0000000000e+00</v><v>0.0000000000e+00</v></row>
+			<!-- 2022-10-26 09:49:00 CDT / 1666795740 --> <row><v>1.1000000000e+00</v><v>1.2000000000e+00</v></row>
+			<!-- 2022-10-26 09:50:00 CDT / 1666795800 --> <row><v>1.7666666667e+00</v><v>1.7000000000e+00</v></row>
+		</database>
+	</rra>
+</rrd>
