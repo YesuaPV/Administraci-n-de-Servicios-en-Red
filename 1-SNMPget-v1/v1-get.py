@@ -18,10 +18,10 @@ from pysnmp.hlapi import *
 
 iterator = getCmd(
     SnmpEngine(),
-    CommunityData('ComunidadASRWin', mpModel=0),
-    UdpTransportTarget(('10.100.75.106', 161)),
+    CommunityData('comunidadYesua', mpModel=0),
+    UdpTransportTarget(('10.100.74.87', 161)),
     ContextData(),
-    ObjectType(ObjectIdentity('1.3.6.1.2.1.1.1.0'))
+    ObjectType(ObjectIdentity('1.3.6.1.2.1.1.3.0'))
 )
 
 errorIndication, errorStatus, errorIndex, varBinds = next(iterator)

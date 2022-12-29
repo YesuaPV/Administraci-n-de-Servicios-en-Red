@@ -28,7 +28,8 @@ import pyautogui
 #       # splited = var[var.index('x')+1:len(var)]
 #       # print(bytes.fromhex(splited).decode('utf-8'))
 
-print("hola")
-input()
-pyautogui.hotkey('ctrl','l')
-print("hola2")
+dir = 'reportes/'
+for f in os.listdir(dir):
+
+    print('192.168.0.191' in f)
+    #os.remove(os.path.join(dir, f))

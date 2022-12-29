@@ -24,9 +24,9 @@ def consulta(ip,comunidad,OID):
         return texto.split("= ")[1]
 
 #MAIN
-ip = '10.100.75.106'
+ip = '10.100.72.13'
 # ip = '10.100.74.190'
-comunidad = 'ComunidadASRWin'
+comunidad = 'ComunidadASRErick'
 OID = {
     'c1': '1.3.6.1.2.1.2.2.1.18.',
     'c2': '1.3.6.1.2.1.4.10.0',
