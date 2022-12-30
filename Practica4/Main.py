@@ -1,21 +1,21 @@
-import telnetlib, socket
+from Telnet import iniciaConexion
+from FTP import iniciaFTP
+import pyautogui
 
+op = 1
+while(op < 3 and op > 0):
+  print('\033[92m' + "\n\tAdministración de configuracion")
+  print("\tPráctica 4: Administración de Contabilidad")
+  print("\tPérez Vidales Yesua David \t4CM13\t2019630501" + '\033[0m')
 
-def createConfig():
-    username = 'rcp'
-    password = 'rcp'
-    HOST = "30.30.30.1"
-    tn = telnetlib.Telnet(HOST)
-
-    tn.read_until(b"User: ")
-    tn.write(username.encode('ascii') + b"\n")
-    if password:
-        tn.read_until(b"Password: ")
-        tn.write(password.encode('ascii') + b"\n")
-    tn.write(b"enable\n")
-    tn.write(b"configure\n")
-    tn.write(b"copy run start\n")
-    tn.write(b"exit\n")
-    tn.write(b"exit\n")
-
-    print(tn.read_all().decode('ascii'))
+  print("\nMENU")
+  print("\n1)Servicio TELNET\n2)Servicio FTP\notro)salir")
+  op = int(input(": "))
+  if op == 1:
+      pyautogui.hotkey('ctrl', 'l')
+      print('\033[92m' + "\tSERVICIO TELNET\n" +'\033[0m')
+      iniciaConexion()
+  elif op == 2:
+      pyautogui.hotkey('ctrl', 'l')
+      print('\033[92m' + "\tSERVICIO FTP\n" + '\033[0m')
+      iniciaFTP()
